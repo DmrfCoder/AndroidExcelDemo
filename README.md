@@ -184,41 +184,42 @@ public class ExcelUtil {
 
 ​    
 ```java
-String filePath =  "/AndroidExcelDemo";
-
-
+String filePath = Environment.getExternalStorageDirectory() + "/AndroidExcelDemo";
 File file = new File(filePath);
-if (!file.exists()) {
-    file.mkdirs();
-}
+        if (!file.exists()) {
+            file.mkdirs();
+        }
 
 
-String excelFileName = "/demo.xls";
+        String excelFileName = "/demo.xls";
 
 
-String[] title = {"姓名", "年龄", "男孩"};
-String sheetName = "demoSheetName";
+        String[] title = {"姓名", "年龄", "男孩"};
+        String sheetName = "demoSheetName";
 
 
-List<DemoBean> demoBeanList = new ArrayList<>();
-DemoBean demoBean1 = new DemoBean("张三", 10, true);
-DemoBean demoBean2 = new DemoBean("小红", 12, false);
-DemoBean demoBean3 = new DemoBean("李四", 18, true);
-DemoBean demoBean4 = new DemoBean("王香", 13, false);
-demoBeanList.add(demoBean1);
-demoBeanList.add(demoBean2);
-demoBeanList.add(demoBean3);
-demoBeanList.add(demoBean4);
-filePath = filePath + excelFileName;
+        List<DemoBean> demoBeanList = new ArrayList<>();
+        DemoBean demoBean1 = new DemoBean("张三", 10, true);
+        DemoBean demoBean2 = new DemoBean("小红", 12, false);
+        DemoBean demoBean3 = new DemoBean("李四", 18, true);
+        DemoBean demoBean4 = new DemoBean("王香", 13, false);
+        demoBeanList.add(demoBean1);
+        demoBeanList.add(demoBean2);
+        demoBeanList.add(demoBean3);
+        demoBeanList.add(demoBean4);
+        filePath = filePath + excelFileName;
 
 
-ExcelUtil.initExcel(filePath, sheetName, title);
+        ExcelUtil.initExcel(filePath, sheetName, title);
 
 
-ExcelUtil.writeObjListToExcel(demoBeanList, filePath, context);
+        ExcelUtil.writeObjListToExcel(demoBeanList, filePath, context);
+
+        textView.setText("excel已导出至：" + filePath);
 ```
 
 最终生成的excel效果如下：
 
 ![image-20190216174313758](https://ws3.sinaimg.cn/large/006tKfTcly1g08empfrhrj30u01o0tby.jpg)
 
+注意一定要处理权限申请的相关工作。
