@@ -9,17 +9,18 @@
 
 
     <TextView
-        android:gravity="center_horizontal"
+
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/export_button"
         android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="161dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/export_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -27,5 +28,18 @@
         android:text="导出"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+
+        android:id="@+id/open_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/export_button"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:text="打开"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="341dp" />
+
 
 </RelativeLayout>
