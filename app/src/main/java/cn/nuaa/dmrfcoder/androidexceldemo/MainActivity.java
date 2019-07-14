@@ -46,7 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private int REQUEST_PERMISSION_CODE = 1000;
 
 
-    private String filePath = Environment.getExternalStorageDirectory() + "/AndroidExcelDemo";
+    private String filePath = "/sdcard/AndroidExcelDemo";
 
     private void requestPermission() {
         if (Build.VERSION.SDK_INT > 23) {
